@@ -9,6 +9,10 @@ def create
     if @user.save 
     session[:user_id] = @user.id 
     redirect_to user_path(@user)
+    else 
+        render :show 
+    end 
+end 
 
 def show 
 end 
@@ -21,4 +25,4 @@ def user_params
     params.require(:user).permit(:username,:email,:password)
 end 
 
-end
+end 
