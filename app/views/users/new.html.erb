@@ -1,0 +1,14 @@
+<center><h1>Signup page !</h1><center>
+<%= form_for(@user) do |f|%>
+
+<% f.label :Username%>
+<center><br><%= f.text_field :username%><br></center>
+
+<% f.label :email%>
+<center><br><%= f.text_field :email%><br></center>
+
+<% f.label :Password%>
+<center><br><%= f.password_field :password_digest%><br></center>
+
+<center><br><%= f.submit "Sign Up" %><br></center>
+<%end%>
