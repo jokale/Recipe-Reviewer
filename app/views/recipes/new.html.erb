@@ -1,1 +1,19 @@
-<h1>Create a new recipe</h1>
+
+<body style="background-color:IndianRed;">
+<center><h1>Create a new recipe</h1></center>
+
+<%= form_for Recipe.new do |f|%>
+  <center><%= f.label :title %></center>
+  <center><br><%= f.text_field :title %><br></center>
+
+  <center><br><%= f.label :ingredients %><br></center>
+ <center><br><%= f.text_field :ingredients %><br></center>
+
+  <center><br><%= f.label :cooking_instructions %><br></center>
+  <center><br><%= f.text_field :cooking_instruction %><br></center>
+
+
+  <center><br><h2><%= f.submit "Create new recipe" %></h2><br></center>
+<% end %>
+
+</body>
