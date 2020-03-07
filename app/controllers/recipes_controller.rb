@@ -6,13 +6,25 @@ class RecipesController < ApplicationController
     end 
 
     def create 
-        @recipe = Recipe.new(recipe_param)
-        if @recipe.save
+        # @recipe = Recipe.new(recipe_params)
+        # @recipe.user_id = session[:user_id]
+        # if @recipe.save
         
-             redirect_to recipe_path(@recipe)
-        else 
-            render :new 
-        end
+        #      redirect_to recipe_path(@recipe)
+        # else 
+        #     render :new 
+        # end
     end 
+
+    
+    private 
+
+#  def recipe_params
+#      params.require(:recipe).permit(:title, :ingredients, :cooking_instruction, :diet_id :diet_attributes[:category])
+
+# #     # getting no implicit conversion of Symbol into Integer error 
+#  end 
+
+
 
 end

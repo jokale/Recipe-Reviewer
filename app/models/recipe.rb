@@ -7,10 +7,5 @@ class Recipe < ApplicationRecord
     accepts_nested_attributes_for :diet
 
 
-private 
-
-def recipe_params
-    params.require(:recipe).permit(:title, :ingredients, :cooking_instruction, :diet_id, :diet_attributes[:category])
-end 
 
 end
