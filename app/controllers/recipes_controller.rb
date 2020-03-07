@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     end 
 
     def create 
-        # @recipe = Recipe.new(recipe_params)
+         @recipe = Recipe.new(recipe_params)
         # @recipe.user_id = session[:user_id]
         # if @recipe.save
         
@@ -14,6 +14,11 @@ class RecipesController < ApplicationController
         # else 
         #     render :new 
         # end
+        # create is not working it seems 
+    end 
+
+
+    def show 
     end 
 
     def index 

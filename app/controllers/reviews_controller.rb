@@ -7,11 +7,23 @@ def new
     # page loads when that line of code is commented out
     # undefined method `build' for nil:NilClass
 end 
+  
 
 def create
-    @review = Review.create(review_params)
+    @review = Review.new(review_params)
+    if @review.save 
     redirect_to review_path(@review)
+    else 
+        render :new
+    end  
 end 
+
+#review does not seem to be saving 
+
+def show 
+    @review = Review.find_by_id(params[:id])
+    
+end
 
 def index 
 end 
