@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_234518) do
+ActiveRecord::Schema.define(version: 2020_03_07_110551) do
 
-  create_table "meals", force: :cascade do |t|
-    t.string "title"
-    t.integer "calories"
+  create_table "diets", force: :cascade do |t|
+    t.string "category"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -25,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_234518) do
     t.text "ingredients"
     t.text "cooking_instruction"
     t.integer "user_id"
-    t.integer "meal_id"
+    t.integer "diet_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_234518) do
     t.string "title"
     t.text "overview"
     t.integer "rating"
-    t.integer "meal_id"
+    t.integer "diet_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -12,6 +12,12 @@
   <center><br><%= f.label :cooking_instructions %><br></center>
   <center><br><%= f.text_field :cooking_instruction %><br></center>
 
+  <center><p>Select meal that already exists:</p></center>
+
+   <center><p>Or create a new meal </p></center>
+   t.integer "user_id"
+    t.integer "meal_id"
+
 
   <center><br><h2><%= f.submit "Create new recipe" %></h2><br></center>
 <% end %>

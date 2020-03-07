@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :diets
   get '/' => "sessions#welcome"
   get '/login' => "sessions#new"
   post '/login' => "sessions#create"
