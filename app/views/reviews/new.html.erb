@@ -1,3 +1,28 @@
 <h2>Review a recipe!</h2>
 
 User will be able to review recipe that is loaded at said index
+
+<%= form_for (@review) do |f|%>
+
+
+
+<div>
+  <center><br><%= f.label :title %><br></center>
+  <center><br><%= f.text_field :title %><br></center>
+</div>
+
+<div>
+  <center><br><%= f.label :overview %><br></center>
+ <center><br><%= f.text_field :overview %><br></center>
+</div>
+
+<div>
+  <center><br><%= f.label :rating %><br></center>
+  <center><br><%= f.number_field :rating, min:0, max:5%><br></center>
+</div>
+
+<%=f.hidden_field :recipe_id%>
+
+<center><br><%= f.submit %><br></center>
+
+<%end%>
