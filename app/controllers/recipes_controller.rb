@@ -16,6 +16,9 @@ class RecipesController < ApplicationController
         # end
     end 
 
+    def index 
+    end 
+
     
     private 
 
