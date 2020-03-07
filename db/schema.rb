@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_03_07_110551) do
     t.string "title"
     t.text "overview"
     t.integer "rating"
-    t.integer "diet_id"
+    t.integer "recipe_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

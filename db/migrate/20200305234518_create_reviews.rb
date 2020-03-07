@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :overview
       t.integer :rating
-      t.integer :diet_id
+      t.integer :recipe_id
       t.integer :user_id
 
       t.timestamps
