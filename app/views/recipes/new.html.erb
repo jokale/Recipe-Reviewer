@@ -2,20 +2,33 @@
 <body style="background-color:IndianRed;">
 <center><h1>Create a new recipe</h1></center>
 
+  
 <%= form_for Recipe.new do |f|%>
+
+
+<center><p>Select a dietary requirement that exists:</p></center>
+
+<div>
+<%= f.collection_select :diet_id, Diet.all, :id, :category%>
+</div>
+   <center><p>Or create a new dietary requirement: </p></center>
+<div>
   <center><%= f.label :title %></center>
   <center><br><%= f.text_field :title %><br></center>
+</div>
 
+<div>
   <center><br><%= f.label :ingredients %><br></center>
  <center><br><%= f.text_field :ingredients %><br></center>
+</div>
 
+<div>
   <center><br><%= f.label :cooking_instructions %><br></center>
   <center><br><%= f.text_field :cooking_instruction %><br></center>
+</div>
 
-  <center><p>Select meal that already exists:</p></center>
 
-   <center><p>Or create a new meal </p></center>
-   t.integer "user_id"
+   t.integer "user_id" 
     t.integer "meal_id"
 
 
