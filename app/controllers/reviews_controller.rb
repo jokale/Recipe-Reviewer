@@ -8,7 +8,19 @@ def new
     # undefined method `build' for nil:NilClass
 end 
 
+def create
+    @review = Review.create(review_params)
+    redirect_to review_path(@review)
+end 
+
 def index 
+end 
+
+private 
+
+def review_params 
+
+    params.require(:review).permit(:recipe_id, :title, :overview, :rating)
 end 
 
 end
