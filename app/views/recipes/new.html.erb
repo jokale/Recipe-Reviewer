@@ -16,30 +16,32 @@
 
    <center><p>Or create a new dietary requirement: </p></center>
 <div>
-<%= f.fields_for :diet do |d|%>
+<%= f.fields_for :diets do |d|%>
 <center><br><%=d.label :Diet_requirement_name%><br></center>
 <center><br><%=d.text_field :category%> <br></center>
+<center><br><%=d.label :Description%><br></center>
+
+<center><br><%=d.text_area :description%> <br></center>
 <%end%>
 
-<%# This is not working? %>
+<%# This is not working? Now its working only if I call it diets when its actually diet%>
 
 </div>
 
 
-
 <div>
-  <center><br><%= f.label :title %><br></center>
+  <center><br><%= f.label :Recipe_title %><br></center>
   <center><br><%= f.text_field :title %><br></center>
 </div>
 
 <div>
   <center><br><%= f.label :ingredients %><br></center>
- <center><br><%= f.text_field :ingredients %><br></center>
+ <center><br><%= f.text_area :ingredients %><br></center>
 </div>
 
 <div>
   <center><br><%= f.label :cooking_instructions %><br></center>
-  <center><br><%= f.text_field :cooking_instruction %><br></center>
+  <center><br><%= f.text_area :cooking_instruction %><br></center>
 </div>
 
 
