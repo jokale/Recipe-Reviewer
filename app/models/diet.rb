@@ -3,5 +3,5 @@ class Diet < ApplicationRecord
     belongs_to :user 
     has_many :users, through: :recipes
     
-    validates :category, presence: :true 
+    validates :category, uniqueness: :true 
 end
