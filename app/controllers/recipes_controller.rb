@@ -1,6 +1,10 @@
 class RecipesController < ApplicationController
 
-
+  def new 
+        @recipe = Recipe.new 
+        @recipe.build_diet
+    end 
+    
     def index 
         @recipes = Recipe.all 
     end
@@ -9,10 +13,7 @@ class RecipesController < ApplicationController
         @recipe = Recipe.find(params[:id])
     end
 
-    def new 
-        @recipe = Recipe.new 
-        @recipe.build_diet
-    end 
+  
         # create is not working it seems 
 
      def create 
