@@ -2,6 +2,17 @@
 
 <h1>All reviews</h1>
 
+<% @reviews.each do |review| %>
+<center><br><%= review.title%><br></center>
+<center><br><%= review.overview%><br></center>
+<center><br><%= review.rating%><br></center>
+<center><br><%= review.user_id%><br></center>
+
+
+  <% end %>
+
+
+
 <%= link_to "Create New Review", new_review_path%>
 
 </body>

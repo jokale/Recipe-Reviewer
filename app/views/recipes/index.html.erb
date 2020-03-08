@@ -2,6 +2,15 @@
 
 <h1>All recipes made by our users:<h1>
 
+<% @recipes.each do |recipe| %>
+<center><br><%= recipe.title%><br></center>
+<center><br><%= recipe.ingredients%><br></center>
+<center><br><%= recipe.cooking_instruction%><br></center>
+
+
+  <% end %>
+
+
 <%# <%= @recipe.each do |r|%>
 <%# 
 <h2><%= r.title%> </h2>
