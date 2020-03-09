@@ -3,6 +3,8 @@
 
 <h1>Login page </h1>
 
+
+
 <p><%= flash[:error]%></p>
 
 <%= form_for(:user) do |f|%>
@@ -16,4 +18,5 @@
   <%= f.submit "Log In" %>
 <% end %>
 
+<br><%=link_to "Login via Facebook", "/auth/facebook"%><br>
 </body>
