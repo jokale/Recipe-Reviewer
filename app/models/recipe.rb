@@ -9,5 +9,8 @@ class Recipe < ApplicationRecord
 
 validates :title, presence: true 
 
+def self.by_diet(diet_id)
+    where(diet: diet_id)
+  end
 
 end

@@ -1,12 +1,19 @@
 class RecipesController < ApplicationController
-
+    helper_method :params
   def new 
         @recipe = Recipe.new 
         @recipe.build_diet
     end 
     
     def index 
-        @recipes = Recipe.all 
+        @diets = Diet.all 
+        if !params[:diet].blank?
+            @recipe = Recipe.by_diet(params[:diet])
+        #   elsif !params[:date].blank?
+          else
+           
+            @recipes = Recipe.all
+          end 
     end
 
     def show 

@@ -1,6 +1,20 @@
 <body style="background-color:Salmon;">
 
+<% if !params[:diet].blank? %>
+  <% @recipes = Recipe.where(recipe: params[:recipe]) %>
+<% end %>
+
 <h1>All recipes made by our users:<h1>
+
+<div>
+  <h3>Filter dietary requirements:</h3>
+  <%= form_tag("/recipes", method: "get") do %>
+    <%= select_tag "diet", options_from_collection_for_select(@diets, "id", "category"), include_blank: true %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>  
+
+
 
 <% @recipes.each do |recipe| %>
 <center><br><%= recipe.title%><br></center>
