@@ -17,7 +17,9 @@
 
 
 <% @recipes.each do |recipe| %>
-<center><br><%= recipe.title%><br></center>
+<center><br><%= recipe.title%></center>
+
+<center><h6>By:<%=recipe.user.username%></h6></center>
 
 <center><h6>Ingredients:</h6><h6><%=recipe.ingredients%></h6></center>
 <center><h6><%= recipe.cooking_instruction%></h6></center>
