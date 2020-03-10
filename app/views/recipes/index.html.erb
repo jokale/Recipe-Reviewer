@@ -18,23 +18,12 @@
 
 <% @recipes.each do |recipe| %>
 <center><br><%= recipe.title%><br></center>
-<%= link_to "Write a review", new_review_path(recipe.id) %>
+
+<center><h6>Ingredients:</h6><h6><%=recipe.ingredients%></h6></center>
+<center><h6><%= recipe.cooking_instruction%></h6></center>
+<center><%= link_to "Write a review", new_review_path(recipe.id) %></center>
+
   <% end %>
-
-
-<%# <%= @recipe.each do |r|%>
-<%# 
-<h2><%= r.title%> 
-
-<%# <%= link_to "Write a review", new_review_path(r.id) %>
-
- <%# <%= r.ingredients%>
-  
-<%# <%= r.cooking_instruction%>
-<%# <%end%> %> %> %> %>
-
-- -  %> %>
-
 
 
 </body>
