@@ -4,9 +4,20 @@ User will be able to review recipe that is loaded at said index
 
 <%= form_for (@review) do |f|%>
 
+<% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 
-<div>
+<div class="field<%= ' field_with_errors' if @review.errors[:title].any? %>">
+
   <center><br><%= f.label :title %><br></center>
   <center><br><%= f.text_field :title %><br></center>
 </div>

@@ -6,6 +6,17 @@
   
 <%= form_for Recipe.new do |f|%>
 
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @recipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 
 <center><p>Select a dietary requirement that exists:</p></center>
 
@@ -31,17 +42,17 @@
 
 <center><h2>Recipe</h2></center>
 
-<div>
+<div  class="field<%= ' field_with_errors' if @recipe.errors[:title].any? %>">
   <center><br><%= f.label :Recipe_title %><br></center>
   <center><br><%= f.text_field :title %><br></center>
 </div>
 
-<div>
+<div class="field<%= ' field_with_errors' if @recipe.errors[:ingredients].any? %>">
   <center><br><%= f.label :ingredients %><br></center>
  <center><br><%= f.text_area :ingredients %><br></center>
 </div>
 
-<div>
+<div class="field<%= ' field_with_errors' if @recipe.errors[:cooking_instruction].any? %>">
   <center><br><%= f.label :cooking_instructions %><br></center>
   <center><br><%= f.text_area :cooking_instruction %><br></center>
 </div>
