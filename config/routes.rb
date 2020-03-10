@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
 
-  get 'auth/facebook/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
+  
+  get '/auth/facebook/callback' => 'sessions#create'
+  # get 'auth/failure', to: redirect('/')
 
   resources :reviews
   resources :diets
