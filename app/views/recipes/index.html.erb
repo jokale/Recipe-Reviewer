@@ -18,16 +18,13 @@
 
 <% @recipes.each do |recipe| %>
 <center><br><%= recipe.title%><br></center>
-<center><br><%= recipe.ingredients%><br></center>
-<center><br><%= recipe.cooking_instruction%><br></center>
-
-
+<%= link_to "Write a review", new_review_path(recipe.id) %>
   <% end %>
 
 
 <%# <%= @recipe.each do |r|%>
 <%# 
-<h2><%= r.title%> </h2>
+<h2><%= r.title%> 
 
 <%# <%= link_to "Write a review", new_review_path(r.id) %>
 
@@ -38,6 +35,6 @@
 
 - -  %> %>
 
-I need to be able to make recipes and save them first for them to appear on here 
+
 
 </body>

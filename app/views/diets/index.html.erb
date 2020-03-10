@@ -1,12 +1,12 @@
 <body style="background-color:Salmon;">
 <h1>Different Diet Requirements</h1>
 
-User dietary requirements should be saved here from my nested form 
+
 
 
 <% @diets.each do |diet| %>
-<center><br><%= diet.category%><br></center>
-<center><br><%= diet.description%><br></center>
+<center><br><h3><%= diet.category%></h3><br></center>
+<center><h5><%= diet.description%><h5></center>
 
 
   <% end %>
@@ -26,8 +26,7 @@ User dietary requirements should be saved here from my nested form
 
 
 
-<center><h3>Many more different types of diet requirements <br> we have yet to mention so feel free to add one below!</h3></center>
-<%= link_to "Add Dietary Requirement", new_diet_path%>
-not sure if I need the above link as I have a nested form 
-   
+<center><h6>Many more different types of diet requirements <br> we have yet to mention so feel free to add one below!</h6></center>
+<center><%= link_to "Add Dietary Requirement", new_diet_path%></center>
+
 </body>

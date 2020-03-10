@@ -4,7 +4,22 @@ class RecipesController < ApplicationController
         @recipe = Recipe.new 
         @recipe.build_diet
     end 
-    
+        def create 
+          @recipe = Recipe.new(recipe_params)
+        #  even if I use create or new the recipe still is not saving 
+            @recipe.user_id = session[:user_id]
+         if @recipe.save
+        
+              redirect_to recipe_path(@recipe),notice: "Successfully created"
+           
+           else 
+            @recipe.build_diet 
+             render :new  
+        end
+     end
+
+
+
     def index 
         @diets = Diet.all 
         if !params[:diet].blank?
@@ -23,18 +38,7 @@ class RecipesController < ApplicationController
   
         # create is not working it seems 
 
-     def create 
-         @recipe = Recipe.create(recipe_params)
-        #  even if I use create or new the recipe still is not saving 
-        #   @recipe.user_id = session[:user_id]
-        if @recipe.save
-        
-              redirect_to recipe_path(@recipe),notice: "Successfully created"
-         else 
-            @recipe.build_diet 
-             render :show  
-        end
-     end
+ 
 
 
     private 
