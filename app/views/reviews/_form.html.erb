@@ -1,0 +1,35 @@
+
+
+<% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="field<%= ' field_with_errors' if @review.errors[:title].any? %>">
+
+  <center><br><%= f.label :title %><br></center>
+  <center><br><%= f.text_field :title %><br></center>
+</div>
+
+<div>
+  <center><br><%= f.label :overview %><br></center>
+ <center><br><%= f.text_area :overview %><br></center>
+</div>
+
+<div>
+  <center><br><%= f.label :rating %><br></center>
+  <center><br><%= f.number_field :rating, min:0, max:5%><br></center>
+</div>
+
+
+<%=f.hidden_field :recipe_id%>
+
+<center><br><%= f.submit %><br></center>
+
