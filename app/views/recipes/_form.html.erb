@@ -1,0 +1,57 @@
+<%= form_for Recipe.new do |f|%>
+
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @recipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<center><p>Select a dietary requirement that exists:</p></center>
+
+<div>
+<center><%= f.collection_select :diet_id, Diet.all, :id, :category%></center>
+</div>
+<%# I cannot seem to create a new diet category when I enter rails c %>
+
+
+   <center><p>Or create a new dietary requirement: </p></center>
+<div>
+<%= f.fields_for :diets do |d|%>
+<center><br><%=d.label :Diet_requirement_name%><br></center>
+<center><br><%=d.text_field :category%> <br></center>
+<center><br><%=d.label :Description%><br></center>
+
+<center><br><%=d.text_area :description%> <br></center>
+<%end%>
+
+<%# This is not working? Now its working only if I call it diets when its actually diet%>
+
+</div>
+
+<center><h2>Recipe</h2></center>
+
+<div  class="field<%= ' field_with_errors' if @recipe.errors[:title].any? %>">
+  <center><br><%= f.label :Recipe_title %><br></center>
+  <center><br><%= f.text_field :title %><br></center>
+</div>
+
+<div class="field<%= ' field_with_errors' if @recipe.errors[:ingredients].any? %>">
+  <center><br><%= f.label :ingredients %><br></center>
+ <center><br><%= f.text_area :ingredients %><br></center>
+</div>
+
+<div class="field<%= ' field_with_errors' if @recipe.errors[:cooking_instruction].any? %>">
+  <center><br><%= f.label :cooking_instructions %><br></center>
+  <center><br><%= f.text_area :cooking_instruction %><br></center>
+</div>
+
+
+
+  <center><br><h2><%= f.submit "Create new recipe" %></h2><br></center>
+<% end %>
