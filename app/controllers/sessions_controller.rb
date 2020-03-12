@@ -11,17 +11,17 @@ class SessionsController < ApplicationController
         
         
 
-        def create
-          def create
-            @user = User.find_or_create_by(uid: auth['uid']) do |u|
-              u.name = auth['info']['name']
-              u.email = auth['info']['email']
-            end
+        
+           def create
+          #   @user = User.find_or_create_by(uid: auth['uid']) do |u|
+          #     u.name = auth['info']['name']
+          #     u.email = auth['info']['email']
+          #   end
          
-            session[:user_id] = @user.id
+          #   session[:user_id] = @user.id
          
-            render 'welcome/home'
-          end
+          #   render 'welcome/home'
+          # end
 
             # if request.env['omniauth.auth']
             #   user = User.create_with_omniauth(request.env[‘omniauth.auth’])
@@ -35,16 +35,16 @@ class SessionsController < ApplicationController
           #   end
           # end
          @user = User.find_by(username: params[:user][:username])
-    #     if @user.try(:authenticate, params[:user][:password])
+         if @user.try(:authenticate, params[:user][:password])
            session[:user_id] = @user.id
               redirect_to user_path(@user)
-        # else 
-        #      flash[:error] = "Sorry that was incorrect, please try again"
-        #       redirect_to login_path
+         else 
+             flash[:error] = "Sorry that was incorrect, please try again"
+               redirect_to login_path
         #      redirect_to '/'
 
     #         #user is somehow being saved but is not redirecting to the correct route!!!
-        
+         end
     end 
 
     
