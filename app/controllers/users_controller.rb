@@ -15,11 +15,13 @@ def create
 end 
 
 def show 
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id(params[:id]) 
+    
 end 
 
 def index
     @users = User.all
+   
 end 
 
 private 
