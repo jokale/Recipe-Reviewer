@@ -1,6 +1,6 @@
 <body style="background-color:Salmon;">
 
-<h1>All reviews</h1>
+<center><h3>All reviews</h3></center>
 
 <% @reviews.each do |review| %>
 <center><br><%= review.title%><br></center>
@@ -13,6 +13,6 @@
 
 
 
-<%= link_to "Create New Review", new_review_path%>
+<%#= link_to "Create New Review", new_review_path%>
 
 </body>

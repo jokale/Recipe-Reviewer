@@ -21,24 +21,25 @@ class RecipesController < ApplicationController
 
 
     def index 
-        @diets = Diet.all 
-        if !params[:diet].blank?
+          @diets = Diet.all 
+             if !params[:diet].blank?
             @recipe = Recipe.by_diet(params[:diet])
-        #   elsif !params[:date].blank?
-          else
-           
-            @recipes = Recipe.all
-          end 
+        # # #   elsif !params[:date].blank?
+             else
+              @recipes = Recipe.all
+             end 
+        #  @recipes = Recipe.all.includes(:diet)
     end
 
     def show 
         @recipe = Recipe.find(params[:id])
     end
 
-  
-        # create is not working it seems 
 
- 
+    def edit
+    end
+  
+
 
 
     private 

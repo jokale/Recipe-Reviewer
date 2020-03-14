@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :reviews 
-    has_many :recipes 
+    has_many :recipes
+    has_many :recipes,  :foreign_key => :diet_id  
     has_many :reviews, through: :recipes 
     
 

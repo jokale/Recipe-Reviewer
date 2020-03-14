@@ -17,20 +17,8 @@
 <div>
 <center><%= f.collection_select :diet_id, Diet.all, :id, :category%></center>
 </div>
-<%# I cannot seem to create a new diet category when I enter rails c %>
 
 
-   <center><p>Or create a new dietary requirement: </p></center>
-<div>
-<%= f.fields_for :diets do |d|%>
-<center><br><%=d.label :Diet_requirement_name%><br></center>
-<center><br><%=d.text_field :category%> <br></center>
-<center><br><%=d.label :Description%><br></center>
-
-<center><br><%=d.text_area :description%> <br></center>
-<%end%>
-
-<%# This is not working? Now its working only if I call it diets when its actually diet%>
 
 </div>
 
