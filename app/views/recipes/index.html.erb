@@ -9,7 +9,7 @@
 <div>
   <h3>Filter dietary requirements:</h3>
   <%= form_tag("/recipes", method: "get") do %>
-    <%= select_tag "diet", options_from_collection_for_select(@diets, "id", "category", @diet), include_blank: true %>
+    <%= select_tag "diet", options_from_collection_for_select(@diets, "id", "category"), include_blank: true %>
     <%= submit_tag "Filter" %>
   <% end %>
 </div>  
