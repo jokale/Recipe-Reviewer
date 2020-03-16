@@ -5,6 +5,8 @@ class Review < ApplicationRecord
     has_many :recipes 
 
 
+    validates :title, uniqueness: :true 
+
     validates :rating, numericality: {only_integer: true,
 greater_than_or_equal_to: 1, less_than:6 }
 end
