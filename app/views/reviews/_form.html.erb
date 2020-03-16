@@ -1,5 +1,6 @@
 <%= form_for (@review) do |f|%>
 
+
 <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2>There were some errors:</h2>
@@ -11,6 +12,9 @@
     </div>
   <% end %>
 
+<div>
+<center><%= f.collection_select :recipe_id, Recipe.all, :id, :title%></center>
+</div>
 
 <div class="field<%= ' field_with_errors' if @review.errors[:title].any? %>">
 

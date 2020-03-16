@@ -1,17 +1,20 @@
 <body style="background-color:Salmon;">
+<h3>Great you've made a review!</h3>
+<h4>Don't worry your review is anonymous <br> so no one will know it was written by you!</h4>
 
 
-<p> Review title: <%=@review.title %></p>
-<p> Review by : <%=@review.user_id %></p>
-<p> Recipe : <%=@review.recipe_id%></p>
-<p>Overview : <%=@review.overview%> </p>
-<p>Rating : <%=@review.rating%></p>
+<%# <p> Recipe : <%=@review.recipe_id%></p> %>
+Should recipe title be placed here?
+<h4>Review details</h4>
+
+<p> Review title: <%=@review.title %></p><br>
+<p>Overview : <%=@review.overview%> </p><br>
+<p>Rating : <%=@review.rating%></p><br>
 
 
 
 
 
-<%=# User id is not showing up and  recipe_id is not showing up I am not sure why maybe because it is not nested>
 
 
 </body>
