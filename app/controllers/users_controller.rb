@@ -38,6 +38,13 @@ def update
 end 
 
 
+ def destroy
+#    @user = User.find(params[:id])
+#    @user.destroy
+#     redirect_to '/'
+# destroy keeps breaking my code 
+ end 
+
 
 private 
 

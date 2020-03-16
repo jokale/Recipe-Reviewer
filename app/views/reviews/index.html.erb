@@ -1,9 +1,10 @@
 <body style="background-color:Salmon;">
 
-<% if @recipe %>
-  <h1>Reviews for <%= @recipe.title%> 
-  <h1>All the Reviews </h1>
-<% end %>
+<center><h4>All the reviews</h4></center>
+<center><h5>They are all anonymous don't worry!</h5></center>
+
+
+
 
 <% @reviews.each do |review| %>
 <center><br><h6>Recipe Title:</h6><%= review.recipe_title%><br></center>

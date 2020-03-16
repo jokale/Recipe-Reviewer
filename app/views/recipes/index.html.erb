@@ -4,7 +4,7 @@
   <% @recipes = Recipe.where(recipe: params[:recipe]) %>
 <% end %>
 
-<h1>All recipes made by our users:<h1>
+<center><h1>All recipes made by our users:<h1></center>
 
 <div><center>
   <h3>Filter dietary requirements:</h3>
@@ -20,7 +20,7 @@
 <center><br><%=recipe.title%></center>
 
 
-<center><h6>By:<%=recipe.user.username%></h6></center>
+<center><h6>By:<%=recipe.user.username unless recipe.user.blank?%></h6></center>
 
 <center><h6>Ingredients:</h6><h6><%=recipe.ingredients%></h6></center>
 <center><h6>Method:<h6/><h6><%= recipe.cooking_instruction%></h6></center>
