@@ -34,7 +34,7 @@ private
 
 def review_params 
 
-    params.require(:review).permit(:recipe_id, :title, :overview, :rating)
+    params.require(:review).permit(:recipe_id, :title, :overview, :rating, :recipe_title)
 end 
 
 end
