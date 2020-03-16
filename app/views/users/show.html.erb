@@ -5,6 +5,11 @@
 <h3>Click above to be naviagted</h3>
 
 
-<h3> Want to see our other users?</h3>
+<h3> Want to see our other users?</h3><br>
 <%=link_to "All users", users_path%>
+
+
+<h4>Want to edit your details?</h4>
+<%= link_to "Edit User", edit_user_path(@user) if @user == current_user%>
+
 </body>

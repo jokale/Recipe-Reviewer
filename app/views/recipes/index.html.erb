@@ -6,25 +6,25 @@
 
 <h1>All recipes made by our users:<h1>
 
-<div>
+<div><center>
   <h3>Filter dietary requirements:</h3>
   <%= form_tag("/recipes", method: "get") do %>
     <%= select_tag "diet", options_from_collection_for_select(@diets, "id", "category"), include_blank: true %>
     <%= submit_tag "Filter" %>
   <% end %>
-</div>  
+</center></div>  
 
 
 
 <% @recipes.each do |recipe| %>
 <center><br><%=recipe.title%></center>
-<center><br><%=recipe.diet_id%></center>
+
 
 <center><h6>By:<%=recipe.user.username%></h6></center>
 
 <center><h6>Ingredients:</h6><h6><%=recipe.ingredients%></h6></center>
 <center><h6>Method:<h6/><h6><%= recipe.cooking_instruction%></h6></center>
-<center><%= link_to "Write a review", new_review_path(recipe.id)%></center>
+
 
   <% end %>
 
