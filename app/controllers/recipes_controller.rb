@@ -23,12 +23,10 @@ class RecipesController < ApplicationController
     def index 
           @diets = Diet.all 
              if !params[:diet].blank?
-            @recipe = Recipe.by_diet(params[:diet])
-        # # #   elsif !params[:date].blank?
+            @recipe = Recipe.by_diet(params = {:diet =>:id})
              else
               @recipes = Recipe.all
              end 
-        #  @recipes = Recipe.all.includes(:diet)
     end
 
     def show 

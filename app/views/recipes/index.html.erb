@@ -12,6 +12,10 @@
     <%= select_tag "diet", options_from_collection_for_select(@diets, "id", "category"), include_blank: true %>
     <%= submit_tag "Filter" %>
   <% end %>
+
+  
+
+
 </center></div>  
 
 
@@ -19,6 +23,7 @@
 <% @recipes.each do |recipe| %>
 <center><br><%=recipe.title%></center>
 
+<center><br><%=recipe.diet_id%></center>
 
 <center><h6>By:<%=recipe.user.username unless recipe.user.blank?%></h6></center>
 

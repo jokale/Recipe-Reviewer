@@ -3,15 +3,14 @@
 <center><h1>Welcome to your personal Recipe Reviewer page <%=@user.username%> !</h1><br>
 </center>
 <center><h3> We cannot wait to see your recipes and reviews!</h3><br></center>
-<center><h4> Want to see our other users?</h4><br>
-<%=link_to "All users", users_path%><br></center>
+<center><h4> Want to see our other users?</h4>
+<%=link_to "All users", users_path%></center>
 
 <center><h4>Want to edit your details?</h4>
 <%= link_to "Edit User", edit_user_path(@user) if @user == current_user%></center>
 
 
 <center><h4>Want to delete your profile?</h4>
- <%= link_to "Delete profile", user_path(@user), :method => "delete", :class => "destroy" %>
 
 
 
