@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController 
-
+helper_method :logged_in?, :current_user
+     def destroy 
+        session.delete(:user_id)
+        redirect_to '/'
+    end 
+    
     def welcome 
     end 
 
@@ -7,34 +12,42 @@ class SessionsController < ApplicationController
 
     end 
 
-   
-        
-
-        
-           def create
-           
-            if params[:provider] == 'github'
-              @user = User.create_by_github_omniauth(auth)
-              session[:user_id] = @user.id	      
-              redirect_to user_path(@user)	      
-            elsif	    
-  
-         @user = User.find_by(username: params[:user][:username])
-          @user.try(:authenticate, params[:user][:password])
-           session[:user_id] = @user.id
-              redirect_to user_path(@user)
-         else 
-             flash[:error] = "Sorry that was incorrect, please try again"
-               redirect_to login_path
-  
-         end
-    end 
-
     
-    def destroy 
-        session.delete(:user_id)
-        redirect_to '/'
-    end 
+   
+
+     def create
+                @user = User.find_by(username: params[:user][:username])
+                if@user.try(:authenticate, params[:user][:password])
+                  session[:user_id] = @user.id
+                  redirect_to user_path(@user)
+                else
+                  flash[:error] = "Sorry, login info was incorrect. Please try again."
+                  render 'new'
+                end
+            end 
+
+  def create_facebook
+      @user = User.find_or_create_by(uid: auth['uid']) do |u|
+        u.username = auth['info']['name']
+        u.email = "noemailgiven@random.com"
+        u.password = SecureRandom.hex 
+        # u.image = auth['info']['image']
+      end
+   
+      session[:user_id] = @user.id
+   
+      render 'welcome'
+    end
+
+    def omniauth
+      @user = User.from_omniauth(auth)
+      @user.save
+      session[:user_id] = @user.id
+      redirect_to home_path
+    end
+
+
+   
 
 
     private
@@ -42,5 +55,6 @@ class SessionsController < ApplicationController
   def auth
     request.env['omniauth.auth']
   end
+
 
 end 

@@ -2,6 +2,14 @@
 <%= link_to "Login", login_path %> <br>
 <%= link_to "Sign up", signup_path%><br>
 
-<%= link_to "Login with Github", "auth/github"%>
+<%# <%= link_to "Login with Github", "auth/github"%>
+<%# <%= link_to "Log In with Google", "/auth/google_oauth2" %>
+<% if session[:user_id] %>
+  <h1><%= @user.name %></h1>
+  <h2>Email: <%= @user.email %></h2>
+  <h2>Facebook UID: <%= @user.uid %></h2>
+<% else %>
+<%= link_to "Log in with Facebook!", '/auth/facebook' %>
+<% end %>
 </p>
 
