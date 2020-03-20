@@ -7,7 +7,7 @@
 
 
 <% @reviews.each do |review| %>
-<center><br><h6>Recipe Title:</h6><%= review.recipe_title%><br></center>
+<center><br><h6>Recipe Title:</h6><%= review.recipe.title%><br></center>
 <center><br><h6>Review Title:</h6><%= review.title%><br></center>
 <center><br><h6>Overview :</h6><%= review.overview%><br></center>
 <center><br><h6>Rating:</h6><%= review.rating%><br></center>

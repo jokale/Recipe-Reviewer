@@ -39,10 +39,12 @@ end
 
 
  def destroy
-#    @user = User.find(params[:id])
-#    @user.destroy
-#     redirect_to '/'
-# destroy keeps breaking my code 
+    @user = User.find(params[:id])
+    @user.destroy 
+    session.clear
+     redirect_to '/'
+
+
  end 
 
 

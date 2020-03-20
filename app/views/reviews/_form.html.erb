@@ -16,10 +16,7 @@
 <center><%= f.collection_select :recipe_id, Recipe.all, :id, :title%></center>
 </div>
 
-<div class="field<%= ' field_with_errors' if @review.errors[:recipe_title].any? %>">
-  <center><br><%= f.label :recipe_title %><br></center>
- <center><br><%= f.text_field :recipe_title %><br></center>
-</div>
+
 
 <div class="field<%= ' field_with_errors' if @review.errors[:title].any? %>">
 
@@ -39,7 +36,6 @@
 </div>
 
 
-<%=f.hidden_field :recipe_id%>
 
 <center><br><%= f.submit %><br></center>
 

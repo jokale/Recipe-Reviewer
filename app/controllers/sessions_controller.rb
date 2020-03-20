@@ -12,9 +12,6 @@ helper_method :logged_in?, :current_user
 
     end 
 
-    
-   
-
      def create
                 @user = User.find_by(username: params[:user][:username])
                 if@user.try(:authenticate, params[:user][:password])
@@ -31,7 +28,7 @@ helper_method :logged_in?, :current_user
         u.username = auth['info']['name']
         u.email = "noemailgiven@random.com"
         u.password = SecureRandom.hex 
-        # u.image = auth['info']['image']
+      
       end
    
       session[:user_id] = @user.id

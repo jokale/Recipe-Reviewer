@@ -2,7 +2,7 @@
 class User < ApplicationRecord
     has_many :reviews 
     has_many :recipes
-    has_many :reviews, through: :recipes 
+    # has_many :reviews, through: :recipes 
     
 
     validates :username, presence: true
@@ -18,12 +18,7 @@ class User < ApplicationRecord
       end
     end
     
-    def self.create_by_github_omniauth(auth)
-      self.find_or_create_by(username: auth[:info][:email]) do |u|
-        u.password = SecureRandom.hex
-  
-      end
-    end
+   
 
 
 
