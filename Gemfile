@@ -30,6 +30,8 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'pry'
 
+#Materialize gem/s
+# gem 'materialize-sass'
 
 
 

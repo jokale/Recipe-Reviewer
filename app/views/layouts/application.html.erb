@@ -1,6 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <style>
+
+    h1 {
+ font-family:  verdana;
+ text-shadow: 2px 1px lightpink;
+  color: tomato;
+  text-align: center;
+}
+  h2 {
+ font-family: verdana;
+  color: pink;
+   text-shadow: 2px 1px slateblue;
+  text-align: center;
+}
+
+  h3 {
+ font-family: verdana;
+  color: pink;
+  text-align: center;
+}
+  h4 {
+ font-family: verdana;
+  color: pink;
+     text-shadow: 2px 1px slateblue;
+  text-align: center;
+}
+  h5 {
+ font-family: verdana;
+  color: pink;
+  text-align: center;
+}
+
+  h6 {
+ font-family: verdana;
+  color: lightblue;
+   text-shadow: 2px 1px slateblue;
+
+  text-align: center;
+}
+
+  p {
+ font-family: verdana;
+  color: pink;
+  text-align: center;
+}
+  
+  </style>
     <title>RecipeReviewer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,15 +57,25 @@
   </head>
 
 
-<div>
- <div><%= render_nav_bar %></div>
+
+ <div>
+ 
+ 
+<%= render_nav_bar %>
+ 
+ 
+ </div>
 
 
 
-</div>
 
   <body style="background-color:Salmon;">
 
-    <%= yield %>
+
+ <div class="container">  <!-- newly added code -->
+   
+ <%= yield %>
+   
+    </div> 
   </body>
 </html>
