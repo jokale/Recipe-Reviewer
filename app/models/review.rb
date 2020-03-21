@@ -1,8 +1,6 @@
 class Review < ApplicationRecord
      belongs_to :user
      belongs_to :recipe
-    # has_many :users 
-    # has_many :recipes 
 
 
     validates :title, uniqueness: :true 

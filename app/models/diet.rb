@@ -1,9 +1,6 @@
-class Diet < ApplicationRecord
-    
-    #  belongs_to :recipe 
+class Diet < ApplicationRecord 
      has_many :recipes 
-    # has_many :users, through: :recipes
-    # has_many :recipes, through: :users
+  
     
     validates :category, uniqueness: :true 
 
