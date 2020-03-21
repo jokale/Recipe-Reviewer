@@ -4,13 +4,12 @@
 <center><h4>They are all anonymous don't worry!</h5></center>
 
 
-
-
 <% @reviews.each do |review| %>
-<center><br><h6>Recipe Title:</h6><%= review.recipe.title%><br></center>
-<center><br><h6>Review Title:</h6><%= review.title%><br></center>
-<center><br><h6>Overview :</h6><%= review.overview%><br></center>
-<center><br><h6>Rating:</h6><%= review.rating%><br></center>
+
+<center><br><h6>Review Title:</h6><p><%= review.title%></p><br></center>
+<center><br><h6>Recipe Title:</h6> <p><%= review.recipe.title%></p><br></center>
+<center><br><h6>Overview :</h6><p><%= review.overview%></p><br></center>
+<center><br><h6>Rating:</h6><p><%= review.rating%><p><br></center>
   <% end %>
 
 

@@ -19,9 +19,8 @@
 
 
 <% @recipes.each do |recipe| %>
-<center><br><%=recipe.title%></center>
+<center><h4><br><%=recipe.title%><h4></center>
 
-<center><br><%=recipe.diet_id%></center>
 
 <center><h6>By:<%=recipe.user.username unless recipe.user.blank?%></h6></center>
 
