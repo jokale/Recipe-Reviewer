@@ -1,24 +1,23 @@
-# README
+# Recipe Reviewer 
+Hi guys and welcome to Recipe Reviewer a web application where you can see endless reviews for different recipes and even create your own recipes and reviews!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Installation 
 
-Things you may want to cover:
+To use this web application first use thede instructions 
 
-* Ruby version
+##Step 1:
+Fork and clone the web app from github into a terminal of your choosing
 
-* System dependencies
+##Step 2:
+Once cloned and opened, run bundle install to install any neccessary gems 
 
-* Configuration
+##Step 3:
+Then in your terminal run 'rails s' to open up the server which will redirect you to http://localhost:3000/ 
 
-* Database creation
+##Step 4:
+Use the web app as instructed and enjoy!
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...

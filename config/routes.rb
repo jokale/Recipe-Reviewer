@@ -7,20 +7,15 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
 
-  # get '/auth/:provider/callback' => 'sessions#create'
-
   
 
   get '/auth/facebook/callback' => 'sessions#create_facebook'
-
-  # match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  # root 'welcome#home'
 
 
   resources :reviews
   resources :diets
   resources :recipes do 
-    resources :reviews, only: [:new, :index]
+  resources :reviews, only: [:new, :index]
 
   end 
   resources :users
