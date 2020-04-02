@@ -26,7 +26,7 @@
 
 <center><h6>Ingredients:</h6><h6><%=recipe.ingredients%></h6></center>
 <center><h6>Method:<h6/><h6><%= recipe.cooking_instruction%></h6></center>
-
+<center><%=link_to "Reviews",recipe_reviews_path(recipe)%></center>
 
   <% end %>
 

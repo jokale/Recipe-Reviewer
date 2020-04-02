@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/signup' => "users#new"
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
+  
 
   
 
@@ -15,8 +16,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :diets
   resources :recipes do 
-  resources :reviews, only: [:new, :index]
-
+    resources :reviews, only: [:new, :index]
   end 
   resources :users
     

@@ -23,7 +23,11 @@ def show
 end
 
 def index 
+   if @recipe = Recipe.find_by_id(params[:recipe_id])
+    @reviews = @recipe.reviews 
+   else  
     @reviews = Review.all 
+   end 
 end 
 
 private 
