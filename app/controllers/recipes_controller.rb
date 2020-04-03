@@ -37,7 +37,16 @@ class RecipesController < ApplicationController
     end
   
 
+    def top_rated
+      @diets = Diet.all 
+      if !params[:diet].blank?
+       @recipes = Recipe.by_diet(params[:diet]).top_rated
+      else 
+       @recipes = Recipe.top_rated
 
+      end
+      render :index   
+    end 
 
     private 
 
