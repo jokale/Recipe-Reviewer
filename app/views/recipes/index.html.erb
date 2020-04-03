@@ -26,6 +26,8 @@
 
 <center><h6>Ingredients:</h6><h6><%=recipe.ingredients%></h6></center>
 <center><h6>Method:<h6/><h6><%= recipe.cooking_instruction%></h6></center>
+<center><h6>Amount of times reviewed:<%=recipe.reviews.size%></h6></center>
+
 <center><%=link_to "Reviews",recipe_reviews_path(recipe)%></center>
 
  <center><%=link_to "Create a new review for #{recipe.title}",new_recipe_review_path(recipe)%></center>

@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
      belongs_to :user
-     belongs_to :recipe
+     belongs_to :recipe, counter_cache: true 
     #  has_many :users, through:recipes  
 
 
