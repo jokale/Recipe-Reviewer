@@ -2,10 +2,13 @@ class ReviewsController < ApplicationController
    
 
 def new
+     if @recipe = Recipe.find_by_id(params[:recipe_id])
+       @review = @recipe.reviews.build 
+     else 
     @review = Review.new 
-   
+     end 
 end 
-  
+
 
 def create
     @review = current_user.reviews.build(review_params) 
